@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="540.0" prefWidth="450.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.AddSupplier">
+    <children>
+        <BorderPane prefHeight="540.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <!-- Header Section -->
+                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="450.0" spacing="8.0" style="-fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 0 0 2 0;" BorderPane.alignment="CENTER">
+                    <children>
+
+                        <Label style="-fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);" text="Add / Edit Supplier">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <Label style="-fx-text-fill: #999999; -fx-font-size: 12;" text="Manage supplier information">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                </VBox>
+            </top>
+            <center>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-background-color: #1a1a1a;" BorderPane.alignment="CENTER">
+                    <children>
+                        <!-- Name Field -->
+                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Supplier Name">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                    <children>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/icons8-company-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="supplierName" prefWidth="340.0" promptText="Enter supplier company name" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Phone Field -->
+                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Phone Number">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                    <children>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/icons8-phone-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="supplierPhone" prefWidth="340.0" promptText="+94 11 234 5678" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Email Field -->
+                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Email Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                    <children>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/icons8-email-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="supplierEmail" prefWidth="340.0" promptText="supplier@company.com" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Address Field -->
+                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                    <children>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/icons8-location-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="supplierAddress" prefWidth="340.0" promptText="Colombo, Sri Lanka" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </center>
+            <bottom>
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="450.0" spacing="12.0" style="-fx-background-color: linear-gradient(to top, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 2 0 0 0;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveSupplier" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);" text="Save">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancel" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-border-color: #666666; -fx-border-radius: 21; -fx-border-width: 2; -fx-cursor: hand;" text="Cancel">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets right="25.0" />
+                    </padding>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

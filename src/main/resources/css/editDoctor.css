@@ -1,0 +1,251 @@
+/* ============================================
+   EDIT-DOCTOR.CSS - Edit Doctor Form Styles
+   ============================================ */
+
+/* Root Container */
+.edit-doctor-root {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Header Section */
+.edit-doctor-header {
+    -fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a);
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 2 0;
+}
+
+.edit-doctor-icon-container {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-padding: 10;
+}
+
+.edit-doctor-icon-container:hover {
+    -fx-background-color: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 136, 0.5), 10, 0, 0, 0);
+}
+
+.edit-doctor-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);
+}
+
+.edit-doctor-subtitle {
+    -fx-text-fill: #999999;
+    -fx-font-size: 12;
+}
+
+/* Form Fields Container */
+.edit-doctor-form {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Field Group */
+.edit-doctor-field-group {
+    -fx-background-color: #0d0d0d;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+}
+
+.edit-doctor-field-group:hover {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Field Label */
+.edit-doctor-field-label {
+    -fx-text-fill: #cccccc;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+/* Input Container */
+.edit-doctor-input-container {
+    -fx-background-color: #262626;
+    -fx-background-radius: 8;
+    -fx-border-color: #404040;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+.edit-doctor-input-container:hover {
+    -fx-border-color: #666666;
+}
+
+/* TextField Styling */
+.edit-doctor-textfield {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-border-width: 0;
+    -fx-font-size: 13;
+}
+
+.edit-doctor-textfield:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Input Icons */
+.edit-doctor-input-icon {
+    -fx-opacity: 0.6;
+}
+
+.edit-doctor-input-container:hover .edit-doctor-input-icon {
+    -fx-opacity: 0.8;
+}
+
+/* Currency Label */
+.edit-doctor-currency-label {
+    -fx-text-fill: #999999;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+/* ComboBox Styling */
+.edit-doctor-combo {
+    -fx-background-color: #262626;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-background-radius: 8;
+    -fx-border-color: #404040;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-size: 13;
+}
+
+.edit-doctor-combo:hover {
+    -fx-border-color: #666666;
+}
+
+.edit-doctor-combo:focused {
+    -fx-border-color: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 136, 0.3), 8, 0, 0, 0);
+}
+
+.edit-doctor-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.edit-doctor-combo .arrow {
+    -fx-background-color: #999999;
+    -fx-padding: 3;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
+}
+
+.edit-doctor-combo:hover .arrow {
+    -fx-background-color: #cccccc;
+}
+
+.edit-doctor-combo:focused .arrow {
+    -fx-background-color: #00ff88;
+}
+
+/* ComboBox Dropdown */
+.edit-doctor-combo .list-cell {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: white;
+}
+
+.edit-doctor-combo .list-cell:hover {
+    -fx-background-color: #262626;
+    -fx-text-fill: #00ff88;
+}
+
+.edit-doctor-combo .list-cell:selected {
+    -fx-background-color: #0d4d2e;
+    -fx-text-fill: #00ff88;
+}
+
+/* Action Buttons Section */
+.edit-doctor-actions {
+    -fx-background-color: linear-gradient(to top, #000000, #1a1a1a);
+    -fx-border-color: #333333;
+    -fx-border-width: 2 0 0 0;
+}
+
+/* Save Button */
+.edit-doctor-save-btn {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-radius: 21;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);
+}
+
+.edit-doctor-save-btn:hover {
+    -fx-background-color: #00ff88;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.6), 12, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.edit-doctor-save-btn:pressed {
+    -fx-background-color: #00cc66;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Cancel Button */
+.edit-doctor-cancel-btn {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-radius: 21;
+    -fx-border-color: #666666;
+    -fx-border-radius: 21;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+}
+
+.edit-doctor-cancel-btn:hover {
+    -fx-background-color: #ff4444;
+    -fx-border-color: #ff6666;
+    -fx-effect: dropshadow(gaussian, rgba(255,68,68,0.5), 10, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.edit-doctor-cancel-btn:pressed {
+    -fx-background-color: #cc0000;
+    -fx-border-color: #ff0000;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Animations */
+.animated-element {
+    -fx-transition: all 0.2s ease;
+}
+
+/* ScrollPane (if content overflows) */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #1a1a1a;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #404040;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}

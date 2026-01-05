@@ -1,0 +1,290 @@
+/* ============================================
+   LOGIN.CSS - Pet Clinic Login Page Styles
+   ============================================ */
+
+/* Root Container */
+.login-root {
+    -fx-background-color: #0d0d0d;
+}
+
+/* Main Container */
+.login-container {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 20;
+    -fx-border-color: #333333;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 30, 0, 0, 10);
+}
+
+/* Left Content Section */
+.login-left-section {
+    -fx-background-color: linear-gradient(to bottom right, #000000, #1a1a1a);
+    -fx-background-radius: 20 0 0 20;
+    -fx-padding: 50;
+}
+
+/* Logo Container */
+.login-logo-container {
+    -fx-background-color: white;
+    -fx-background-radius: 50;
+    -fx-padding: 12;
+}
+
+.login-logo-container:hover {
+    -fx-background-color: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.5), 15, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Brand Name */
+.login-brand-name {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+}
+
+/* Decorative Shapes */
+.login-deco-circle {
+    -fx-fill: transparent;
+    -fx-stroke: white;
+    -fx-stroke-width: 3;
+}
+
+.login-deco-rectangle {
+    -fx-fill: white;
+}
+
+.login-deco-filled-circle {
+    -fx-fill: white;
+}
+
+/* Welcome Title */
+.login-welcome-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 48;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);
+}
+
+/* Contact Info */
+.login-emergency-label {
+    -fx-text-fill: #cccccc;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+.login-phone-number {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+}
+
+/* Description */
+.login-description-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+}
+
+.login-description-text {
+    -fx-text-fill: #999999;
+    -fx-font-size: 14;
+}
+
+/* More Info Button */
+.login-more-info-btn {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-radius: 23;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);
+}
+
+.login-more-info-btn:hover {
+    -fx-background-color: #00ff88;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.6), 12, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.login-more-info-btn:pressed {
+    -fx-background-color: #00cc66;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Right Section */
+.login-right-section {
+    -fx-background-color: #0d0d0d;
+    -fx-background-radius: 0 20 20 0;
+}
+
+/* Login Card */
+.login-card {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 15;
+    -fx-padding: 45;
+    -fx-border-color: #333333;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+}
+
+/* Login Logo Container */
+.login-card-logo-container {
+    -fx-background-color: white;
+    -fx-background-radius: 50;
+    -fx-padding: 20;
+}
+
+.login-card-logo-container:hover {
+    -fx-background-color: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.5), 15, 0, 0, 0);
+}
+
+/* Login Header */
+.login-card-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 32;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.2), 5, 0, 0, 0);
+}
+
+.login-card-subtitle {
+    -fx-text-fill: #999999;
+    -fx-font-size: 14;
+}
+
+/* Field Label */
+.login-field-label {
+    -fx-text-fill: #cccccc;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+}
+
+/* Input Container */
+.login-input-container {
+    -fx-background-color: #262626;
+    -fx-background-radius: 10;
+    -fx-border-color: #404040;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-padding: 12;
+}
+
+.login-input-container:hover {
+    -fx-border-color: #666666;
+}
+
+/* Input Icon */
+.login-input-icon {
+    -fx-opacity: 0.6;
+}
+
+.login-input-container:hover .login-input-icon {
+    -fx-opacity: 0.8;
+}
+
+/* TextField & PasswordField */
+.login-textfield {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-border-width: 0;
+    -fx-font-size: 14;
+}
+
+.login-textfield:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.login-passwordfield {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-border-width: 0;
+    -fx-font-size: 14;
+}
+
+.login-passwordfield:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Forgot Password Link */
+.login-forgot-password {
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+.login-forgot-password:hover {
+    -fx-text-fill: #00ff88;
+}
+
+/* Login Button */
+.login-btn {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 10, 0, 0, 0);
+}
+
+.login-btn:hover {
+    -fx-background-color: #00ff88;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.7), 15, 0, 0, 0);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.login-btn:pressed {
+    -fx-background-color: #00cc66;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Sign Up Link */
+.login-signup-text {
+    -fx-text-fill: #999999;
+    -fx-font-size: 13;
+}
+
+.login-signup-link {
+    -fx-text-fill: white;
+    -fx-font-size: 13;
+    -fx-cursor: hand;
+    -fx-underline: true;
+    -fx-font-weight: bold;
+}
+
+.login-signup-link:hover {
+    -fx-text-fill: #00ff88;
+}
+
+/* Animations */
+.animated-element {
+    -fx-transition: all 0.3s ease;
+}
+
+/* Bottom Decorative Dots */
+.login-deco-dot-small {
+    -fx-fill: white;
+}
+
+.login-deco-dot-medium {
+    -fx-fill: white;
+}
+
+.login-deco-dot-tiny {
+    -fx-fill: white;
+}

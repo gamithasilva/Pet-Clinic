@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="invoice_report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4e8e8e8e-8e8e-8e8e-8e8e-8e8e8e8e8e8e">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+
+    <!-- Parameters passed from Java code -->
+    <parameter name="invoiceNumber" class="java.lang.String"/>
+    <parameter name="invoiceDate" class="java.lang.String"/>
+    <parameter name="petName" class="java.lang.String"/>
+    <parameter name="ownerName" class="java.lang.String"/>
+    <parameter name="doctorName" class="java.lang.String"/>
+    <parameter name="appointmentDate" class="java.lang.String"/>
+    <parameter name="consultationFee" class="java.math.BigDecimal"/>
+    <parameter name="medicineTotal" class="java.math.BigDecimal"/>
+    <parameter name="subtotal" class="java.math.BigDecimal"/>
+    <parameter name="discount" class="java.math.BigDecimal"/>
+    <parameter name="totalAmount" class="java.math.BigDecimal"/>
+    <parameter name="paymentStatus" class="java.lang.String"/>
+
+    <background splitType="Stretch"/>
+
+    <!-- Title Band -->
+    <title height="150" splitType="Stretch">
+        <!-- Clinic Header -->
+        <element kind="staticText" uuid="title-uuid" x="0" y="0" width="555" height="40">
+            <text><![CDATA[Pet Clinic & Pharmacy]]></text>
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+            <box>
+                <pen lineWidth="0.0"/>
+            </box>
+            <textElement textAlignment="Center" verticalAlignment="Middle">
+                <font size="24" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="staticText" uuid="subtitle-uuid" x="0" y="40" width="555" height="20">
+            <text><![CDATA[Veterinary Care & Pet Pharmacy Services]]></text>
+            <textElement textAlignment="Center">
+                <font size="10"/>
+            </textElement>
+        </element>
+
+        <element kind="staticText" uuid="address-uuid" x="0" y="60" width="555" height="15">
+            <text><![CDATA[123 Main Street, Colombo 10, Sri Lanka | Phone: +94 11 234 5678]]></text>
+            <textElement textAlignment="Center">
+                <font size="9"/>
+            </textElement>
+        </element>
+
+        <element kind="line" uuid="line1-uuid" x="0" y="85" width="555" height="1">
+            <pen lineWidth="1.0"/>
+        </element>
+
+        <!-- Invoice Title -->
+        <element kind="staticText" uuid="invoice-title-uuid" x="0" y="95" width="555" height="30">
+            <text><![CDATA[INVOICE]]></text>
+            <textElement textAlignment="Center" verticalAlignment="Middle">
+                <font size="18" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="line" uuid="line2-uuid" x="0" y="135" width="555" height="1">
+            <pen lineWidth="1.0"/>
+        </element>
+    </title>
+
+    <!-- Page Header -->
+    <pageHeader height="120" splitType="Stretch">
+        <!-- Invoice Number -->
+        <element kind="staticText" uuid="inv-num-label-uuid" x="0" y="10" width="100" height="20">
+            <text><![CDATA[Invoice Number:]]></text>
+            <textElement>
+                <font size="10" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="inv-num-value-uuid" x="100" y="10" width="150" height="20">
+            <expression><![CDATA[$P{invoiceNumber}]]></expression>
+            <textElement>
+                <font size="10"/>
+            </textElement>
+        </element>
+
+        <!-- Invoice Date -->
+        <element kind="staticText" uuid="inv-date-label-uuid" x="0" y="35" width="100" height="20">
+            <text><![CDATA[Invoice Date:]]></text>
+            <textElement>
+                <font size="10" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="inv-date-value-uuid" x="100" y="35" width="150" height="20">
+            <expression><![CDATA[$P{invoiceDate}]]></expression>
+            <textElement>
+                <font size="10"/>
+            </textElement>
+        </element>
+
+        <!-- Payment Status -->
+        <element kind="staticText" uuid="status-label-uuid" x="350" y="10" width="100" height="20">
+            <text><![CDATA[Payment Status:]]></text>
+            <textElement>
+                <font size="10" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="status-value-uuid" x="450" y="10" width="105" height="20">
+            <expression><![CDATA[$P{paymentStatus}.toUpperCase()]]></expression>
+            <textElement>
+                <font size="10" isBold="true"/>
+            </textElement>
+        </element>
+
+        <!-- Client Details Header -->
+        <element kind="staticText" uuid="client-header-uuid" x="0" y="70" width="555" height="20">
+            <text><![CDATA[  Client & Pet Information]]></text>
+            <box>
+                <topPen lineWidth="1.0"/>
+                <bottomPen lineWidth="1.0"/>
+            </box>
+            <textElement verticalAlignment="Middle">
+                <font size="12" isBold="true"/>
+            </textElement>
+        </element>
+
+        <!-- Owner Name -->
+        <element kind="staticText" uuid="owner-label-uuid" x="10" y="95" width="80" height="20">
+            <text><![CDATA[Owner Name:]]></text>
+            <textElement>
+                <font size="9" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="owner-value-uuid" x="90" y="95" width="150" height="20">
+            <expression><![CDATA[$P{ownerName}]]></expression>
+            <textElement>
+                <font size="9"/>
+            </textElement>
+        </element>
+
+        <!-- Pet Name -->
+        <element kind="staticText" uuid="pet-label-uuid" x="280" y="95" width="60" height="20">
+            <text><![CDATA[Pet Name:]]></text>
+            <textElement>
+                <font size="9" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="pet-value-uuid" x="340" y="95" width="215" height="20">
+            <expression><![CDATA[$P{petName}]]></expression>
+            <textElement>
+                <font size="9"/>
+            </textElement>
+        </element>
+    </pageHeader>
+
+    <!-- Column Header -->
+    <columnHeader height="80" splitType="Stretch">
+        <!-- Appointment Details Header -->
+        <element kind="staticText" uuid="appt-header-uuid" x="0" y="0" width="555" height="20">
+            <text><![CDATA[  Appointment Details]]></text>
+            <box>
+                <topPen lineWidth="1.0"/>
+                <bottomPen lineWidth="1.0"/>
+            </box>
+            <textElement verticalAlignment="Middle">
+                <font size="12" isBold="true"/>
+            </textElement>
+        </element>
+
+        <!-- Doctor -->
+        <element kind="staticText" uuid="doctor-label-uuid" x="10" y="25" width="80" height="20">
+            <text><![CDATA[Doctor:]]></text>
+            <textElement>
+                <font size="9" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="doctor-value-uuid" x="90" y="25" width="200" height="20">
+            <expression><![CDATA[$P{doctorName}]]></expression>
+            <textElement>
+                <font size="9"/>
+            </textElement>
+        </element>
+
+        <!-- Appointment Date -->
+        <element kind="staticText" uuid="appt-date-label-uuid" x="10" y="50" width="80" height="20">
+            <text><![CDATA[Appointment:]]></text>
+            <textElement>
+                <font size="9" isBold="true"/>
+            </textElement>
+        </element>
+
+        <element kind="textField" uuid="appt-date-value-uuid" x="90" y="50" width="200" height="20">
+            <expression><![CDATA[$P{appointmentDate}]]></expression>
+            <textElement>
+                <font size="9"/>
+            </textElement>
+        </element>
+    </columnHeader>
+
+    <!-- Detail Band (Charges) -->
+    <detail>
+        <band height="150" splitType="Stretch">
+            <!-- Table Headers -->
+            <element kind="staticText" uuid="charges-header-uuid" mode="Opaque" x="0" y="10" width="350" height="25" backcolor="#E0E0E0">
+                <text><![CDATA[Description]]></text>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+            </element>
+
+            <element kind="staticText" uuid="amount-header-uuid" mode="Opaque" x="350" y="10" width="205" height="25" backcolor="#E0E0E0">
+                <text><![CDATA[Amount (Rs.)]]></text>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+            </element>
+
+            <!-- Consultation Fee -->
+            <element kind="staticText" uuid="consult-label-uuid" x="10" y="35" width="340" height="20">
+                <text><![CDATA[Consultation Fee]]></text>
+                <box leftPadding="5">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+            </element>
+
+            <element kind="textField" uuid="consult-value-uuid" x="350" y="35" width="205" height="20" pattern="#,##0.00">
+                <expression><![CDATA[$P{consultationFee}]]></expression>
+                <box rightPadding="10">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+            </element>
+
+            <!-- Medicine Total -->
+            <element kind="staticText" uuid="medicine-label-uuid" x="10" y="55" width="340" height="20">
+                <text><![CDATA[Medicine Total]]></text>
+                <box leftPadding="5">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+            </element>
+
+            <element kind="textField" uuid="medicine-value-uuid" x="350" y="55" width="205" height="20" pattern="#,##0.00">
+                <expression><![CDATA[$P{medicineTotal}]]></expression>
+                <box rightPadding="10">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+            </element>
+
+            <!-- Subtotal -->
+            <element kind="staticText" uuid="subtotal-label-uuid" x="10" y="75" width="340" height="20">
+                <text><![CDATA[Subtotal]]></text>
+                <box leftPadding="5">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="10" isBold="true"/>
+                </textElement>
+            </element>
+
+            <element kind="textField" uuid="subtotal-value-uuid" x="350" y="75" width="205" height="20" pattern="#,##0.00">
+                <expression><![CDATA[$P{subtotal}]]></expression>
+                <box rightPadding="10">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="10" isBold="true"/>
+                </textElement>
+            </element>
+
+            <!-- Discount -->
+            <element kind="staticText" uuid="discount-label-uuid" x="10" y="95" width="340" height="20">
+                <text><![CDATA[Discount]]></text>
+                <box leftPadding="5">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+            </element>
+
+            <element kind="textField" uuid="discount-value-uuid" x="350" y="95" width="205" height="20" pattern="#,##0.00">
+                <expression><![CDATA[$P{discount}]]></expression>
+                <box rightPadding="10">
+                    <leftPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+            </element>
+
+            <!-- Total Amount -->
+            <element kind="staticText" uuid="total-label-uuid" mode="Opaque" x="10" y="115" width="340" height="30" backcolor="#FFE6CC">
+                <text><![CDATA[TOTAL AMOUNT]]></text>
+                <box leftPadding="5">
+                    <pen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+            </element>
+
+            <element kind="textField" uuid="total-value-uuid" mode="Opaque" x="350" y="115" width="205" height="30" backcolor="#FFE6CC" pattern="#,##0.00">
+                <expression><![CDATA[$P{totalAmount}]]></expression>
+                <box rightPadding="10">
+                    <pen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+            </element>
+        </band>
+    </detail>
+
+    <columnFooter height="45" splitType="Stretch"/>
+
+    <!-- Page Footer -->
+    <pageFooter height="80" splitType="Stretch">
+        <element kind="line" uuid="footer-line-uuid" x="0" y="10" width="555" height="1">
+            <pen lineWidth="1.0"/>
+        </element>
+
+        <element kind="staticText" uuid="footer-text-uuid" x="0" y="20" width="555" height="50">
+            <text><![CDATA[Thank you for choosing Pet Clinic & Pharmacy!
+We care about your pet's health and wellbeing.
+
+For inquiries, please contact us at info@petclinic.lk or call +94 11 234 5678]]></text>
+            <textElement textAlignment="Center">
+                <font size="9" isItalic="true"/>
+            </textElement>
+        </element>
+    </pageFooter>
+
+    <summary height="42" splitType="Stretch"/>
+</jasperReport>

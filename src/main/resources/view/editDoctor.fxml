@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="450.0" styleClass="edit-doctor-root" stylesheets="@../css/editDoctor.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.EditDoctorController">
+   <children>
+      <VBox spacing="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Header Section -->
+            <VBox alignment="CENTER" prefHeight="100.0" spacing="8.0" styleClass="edit-doctor-header">
+               <children>
+
+                  <Label styleClass="edit-doctor-title" text="Edit Doctor">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+
+                  <Label styleClass="edit-doctor-subtitle" text="Update doctor information">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+
+            <!-- Form Fields Section -->
+            <VBox spacing="15.0" styleClass="edit-doctor-form">
+               <children>
+                  <!-- Name Field -->
+                  <VBox spacing="8.0" styleClass="edit-doctor-field-group">
+                     <children>
+                        <Label styleClass="edit-doctor-field-label" text="Doctor Name">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="edit-doctor-input-container">
+                           <children>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="edit-doctor-input-icon">
+                                 <image>
+                                    <Image url="@../image/icons8-user-64.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="dname" prefWidth="360.0" promptText="Enter doctor's full name" styleClass="edit-doctor-textfield" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Email Field -->
+                  <VBox spacing="8.0" styleClass="edit-doctor-field-group">
+                     <children>
+                        <Label styleClass="edit-doctor-field-label" text="Email Address">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="edit-doctor-input-container">
+                           <children>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="edit-doctor-input-icon">
+                                 <image>
+                                    <Image url="@../image/icons8-email-50.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="demail" prefWidth="360.0" promptText="doctor@petclinic.com" styleClass="edit-doctor-textfield" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Phone Field -->
+                  <VBox spacing="8.0" styleClass="edit-doctor-field-group">
+                     <children>
+                        <Label styleClass="edit-doctor-field-label" text="Phone Number">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="edit-doctor-input-container">
+                           <children>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="edit-doctor-input-icon">
+                                 <image>
+                                    <Image url="@../image/icons8-phone-50.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="dphone" prefWidth="360.0" promptText="+1 234 567 8900" styleClass="edit-doctor-textfield" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Consultation Fee Field -->
+                  <VBox spacing="8.0" styleClass="edit-doctor-field-group">
+                     <children>
+                        <Label styleClass="edit-doctor-field-label" text="Consultation Fee">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="edit-doctor-input-container">
+                           <children>
+                              <Label styleClass="edit-doctor-currency-label" text="Rs">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="dfee" prefWidth="360.0" promptText="0.00" styleClass="edit-doctor-textfield" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Status Field -->
+                  <VBox spacing="8.0" styleClass="edit-doctor-field-group">
+                     <children>
+                        <Label styleClass="edit-doctor-field-label" text="Availability Status">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="dstatus" prefHeight="38.0" prefWidth="410.0" promptText="Select availability status" styleClass="edit-doctor-combo" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="450.0" spacing="12.0" styleClass="edit-doctor-actions" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#doSave" prefHeight="42.0" prefWidth="120.0" styleClass="edit-doctor-save-btn" text="Save Changes">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#doCancel" prefHeight="42.0" prefWidth="120.0" styleClass="edit-doctor-cancel-btn" text="Cancel">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

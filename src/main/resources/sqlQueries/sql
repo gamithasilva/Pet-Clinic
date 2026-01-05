@@ -1,0 +1,204 @@
+-- =============================================
+-- Veterinary Clinic + Pet Pharmacy Management System
+-- MySQL 8.0+ | Complete Database Schema
+-- =============================================
+
+-- Database Setup
+DROP DATABASE IF EXISTS petclinic;
+CREATE DATABASE petclinic;
+USE petclinic;
+
+-- =============================================
+-- User Management Tables
+-- =============================================
+
+-- Users (Admin, Doctors, Staff)
+CREATE TABLE users (
+    user_id       INT AUTO_INCREMENT PRIMARY KEY,
+    name          VARCHAR(100) NOT NULL,
+    email         VARCHAR(100) UNIQUE NOT NULL,
+    phone         VARCHAR(20),
+    password_hash VARCHAR(255) NOT NULL,
+    role          VARCHAR(20) NOT NULL
+);
+
+-- Doctors
+CREATE TABLE doctors (
+    doctor_id        INT AUTO_INCREMENT PRIMARY KEY,
+    user_id          INT UNIQUE NOT NULL,
+    consultation_fee DECIMAL(10,2) NOT NULL DEFAULT 0,
+    status           VARCHAR(50) DEFAULT 'Available',
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- =============================================
+-- Pet Owner and Pet Management Tables
+-- =============================================
+
+-- Pet Owners
+CREATE TABLE pet_owners (
+    pet_owner_id INT AUTO_INCREMENT PRIMARY KEY,
+    name         VARCHAR(100),
+    email        VARCHAR(100) UNIQUE NOT NULL,
+    phone        VARCHAR(20) NOT NULL,
+    address      TEXT
+);
+
+-- Pets
+CREATE TABLE pets (
+    pet_id        INT AUTO_INCREMENT PRIMARY KEY,
+    pet_owner_id  INT NOT NULL,
+    name          VARCHAR(100),
+    species       VARCHAR(50),
+    breed         VARCHAR(100),
+    gender        VARCHAR(50),
+    date_of_birth DATE,
+    imageURL      VARCHAR(200),
+    FOREIGN KEY (pet_owner_id) REFERENCES pet_owners(pet_owner_id) ON DELETE CASCADE
+);
+
+-- =============================================
+-- Appointment Management Tables
+-- =============================================
+
+-- Appointments
+CREATE TABLE appointments (
+    appointment_id       INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id            INT NOT NULL,
+    pet_id               INT NOT NULL,
+    appointment_datetime DATETIME NOT NULL,
+    consultation_fee     DECIMAL(10,2) NOT NULL DEFAULT 0,
+    status               VARCHAR(50) NOT NULL,
+    notes                TEXT,
+    created_at           DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id),
+    FOREIGN KEY (pet_id) REFERENCES pets(pet_id),
+    INDEX idx_doctor_time (doctor_id, appointment_datetime)
+);
+
+-- Medical History
+CREATE TABLE medical_history (
+    medi_his_id    INT AUTO_INCREMENT PRIMARY KEY,
+    pet_id         INT,
+    appointment_id INT,
+    medical_history TEXT,
+    FOREIGN KEY (pet_id) REFERENCES pets(pet_id),
+    FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id)
+);
+
+-- Payments
+CREATE TABLE payments (
+    payment_id     INT AUTO_INCREMENT PRIMARY KEY,
+    appointment_id INT UNIQUE NOT NULL,
+    amount         DECIMAL(10,2) NOT NULL,
+    payment_date   DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status         ENUM('pending','completed','failed','refunded') DEFAULT 'completed',
+    FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id) ON DELETE RESTRICT
+);
+
+-- =============================================
+-- Medicine and Pharmacy Management Tables
+-- =============================================
+
+-- Medicines
+CREATE TABLE medicines (
+    medicine_id    INT AUTO_INCREMENT PRIMARY KEY,
+    name           VARCHAR(200) NOT NULL,
+    generic_name   VARCHAR(200),
+    unit           VARCHAR(20) NOT NULL,
+    buying_price   DECIMAL(10,2) NOT NULL,
+    selling_price  DECIMAL(10,2) NOT NULL,
+    current_stock  INT NOT NULL DEFAULT 0,
+    reorder_level  INT DEFAULT 10,
+    imageURL       VARCHAR(225)
+);
+
+-- Appointment Medicines (Prescribed)
+CREATE TABLE appointment_medicines (
+    appointment_id INT NOT NULL,
+    medicine_id    INT NOT NULL,
+    quantity       INT NOT NULL CHECK (quantity > 0),
+    PRIMARY KEY (appointment_id, medicine_id),
+    FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id) ON DELETE CASCADE,
+    FOREIGN KEY (medicine_id) REFERENCES medicines(medicine_id)
+);
+
+-- =============================================
+-- Supplier and Purchase Order Tables
+-- =============================================
+
+-- Suppliers
+CREATE TABLE suppliers (
+    supplier_id INT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(200) NOT NULL,
+    phone       VARCHAR(20),
+    email       VARCHAR(100),
+    address     TEXT
+);
+
+-- Purchase Orders
+CREATE TABLE purchase_orders (
+    order_id      INT AUTO_INCREMENT PRIMARY KEY,
+    supplier_id   INT NOT NULL,
+    order_date    DATE NOT NULL DEFAULT (CURRENT_DATE),
+    total_amount  DECIMAL(12,2) NOT NULL DEFAULT 0,
+    status        VARCHAR(30),
+    received_date DATE NULL,
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+);
+
+-- Purchase Order Items
+CREATE TABLE purchase_order_items (
+    order_id          INT NOT NULL,
+    medicine_id       INT NOT NULL,
+    quantity          INT NOT NULL CHECK (quantity > 0),
+    unit_buying_price DECIMAL(10,2) NOT NULL,
+    subtotal          DECIMAL(12,2) AS (quantity * unit_buying_price) STORED,
+    PRIMARY KEY (order_id, medicine_id),
+    FOREIGN KEY (order_id) REFERENCES purchase_orders(order_id) ON DELETE CASCADE,
+    FOREIGN KEY (medicine_id) REFERENCES medicines(medicine_id)
+);
+
+-- =============================================
+-- Sample Data Inserts
+-- =============================================
+
+-- Insert Admin User
+INSERT INTO users (name, email, phone, password_hash, role)
+VALUES ('Gamitha Kaveesha', 'admin@gmail.com', '0783441420', '1234', 'admin');
+
+-- Insert Doctor Users
+INSERT INTO users (name, email, phone, password_hash, role)
+VALUES
+    ('Sanduni Ratnayake', 'sanduni.ratnayake@slclinic.lk', '0715566778', 'hashed_pw6', 'doctor'),
+    ('Pradeep Silva', 'pradeep.silva@slclinic.lk', '0773344556', 'hashed_pw7', 'doctor'),
+    ('Ishara Gunawardena', 'ishara.gunawardena@slclinic.lk', '0767788990', 'hashed_pw8', 'doctor'),
+    ('Tharindu Karunaratne', 'tharindu.karunaratne@slclinic.lk', '0782233445', 'hashed_pw9', 'doctor'),
+    ('Dilani Wickramasinghe', 'dilani.wickramasinghe@slclinic.lk', '0794455667', 'hashed_pw10', 'doctor');
+
+-- Insert Sample Medicines
+INSERT INTO medicines (name, generic_name, unit, buying_price, selling_price, current_stock, reorder_level)
+VALUES
+    ('Panadol', 'Paracetamol', 'Tablet', 2.50, 5.00, 500, 100),
+    ('Amoxil', 'Amoxicillin', 'Capsule', 12.00, 20.00, 200, 50),
+    ('Brufen', 'Ibuprofen', 'Tablet', 6.00, 10.00, 300, 80),
+    ('Cetirizine', 'Cetirizine Hydrochloride', 'Tablet', 3.00, 6.00, 400, 100),
+    ('ORS Sachet', 'Oral Rehydration Salts', 'Sachet', 15.00, 25.00, 150, 30),
+    ('Cough Syrup', 'Dextromethorphan', 'Bottle', 180.00, 250.00, 60, 20),
+    ('Vitamin C', 'Ascorbic Acid', 'Tablet', 4.00, 8.00, 700, 150),
+    ('Insulin', 'Human Insulin', 'Vial', 950.00, 1200.00, 40, 15);
+
+-- Insert Sample Suppliers
+INSERT INTO suppliers (name, phone, email, address)
+VALUES
+    ('ABC Pharma Distributors', '+94 11 2345678', 'contact@abcpharma.lk', 'No. 45, Main Street, Colombo 10'),
+    ('HealthCare Medical Suppliers', '+94 77 1234567', 'sales@healthcare.lk', 'No. 120, Galle Road, Dehiwala'),
+    ('Lanka Drug House', '+94 11 2987654', 'info@lankadrughouse.lk', 'No. 88, Kandy Road, Kelaniya'),
+    ('City Medical Supplies', '+94 71 4567890', 'citymed@gmail.com', 'No. 32, Hospital Road, Kandy'),
+    ('Green Life Pharmaceuticals', '+94 76 9988776', 'greenlife@pharma.lk', 'No. 14, Temple Lane, Kurunegala'),
+    ('Sunrise Pharma Pvt Ltd', '+94 11 2678901', 'sunrise@pharma.lk', 'No. 210, High Level Road, Nugegoda'),
+    ('MediCare Suppliers', '+94 72 3344556', 'medicare.suppliers@gmail.com', 'No. 55, New Town, Anuradhapura');
+
+-- =============================================
+-- End of Schema
+-- =============================================

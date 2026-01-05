@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="700.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.ViewPurchaseOrderController">
+    <children>
+        <VBox spacing="0.0" style="-fx-background-color: #1a1a1a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Header Section -->
+                <VBox alignment="CENTER" prefHeight="120.0" spacing="8.0" style="-fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 0 0 2 0;">
+                    <children>
+
+                        <Label fx:id="orderTitle" style="-fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);" text="Purchase Order #PO001">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <Label fx:id="orderStatus" style="-fx-background-color: linear-gradient(to right, #ff9933, #ffaa55); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12; -fx-background-radius: 15; -fx-padding: 5 15 5 15; -fx-border-color: #ffaa55; -fx-border-radius: 15; -fx-border-width: 1;" text="Pending">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Order Info Section -->
+                <VBox spacing="15.0" style="-fx-background-color: #1a1a1a;">
+                    <children>
+                        <!-- Info Cards Grid -->
+                        <HBox spacing="15.0">
+                            <children>
+                                <!-- Supplier Info Card -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-color: #333333; -fx-border-radius: 12; -fx-border-width: 2; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11; -fx-font-weight: bold;" text="SUPPLIER">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="supplierNameLabel" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="MedSupply Lanka" wrapText="true">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <!-- Order Date Card -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-color: #333333; -fx-border-radius: 12; -fx-border-width: 2; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11; -fx-font-weight: bold;" text="ORDER DATE">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="orderDateLabel" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="2024-01-15">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <!-- Received Date Card -->
+                                <VBox fx:id="receivedDateCard" managed="false" spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-color: #333333; -fx-border-radius: 12; -fx-border-width: 2; -fx-padding: 15;" visible="false" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11; -fx-font-weight: bold;" text="RECEIVED DATE">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="receivedDateLabel" style="-fx-text-fill: #00ff88; -fx-font-size: 16; -fx-font-weight: bold;" text="2024-01-20">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Order Items Section -->
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;" text="Order Items">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <!-- Items Table -->
+                                <TableView fx:id="itemsTable" prefHeight="280.0" style="-fx-background-color: #0d0d0d; -fx-border-color: #333333; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+                                    <columns>
+                                        <TableColumn fx:id="colMedicineName" minWidth="150" prefWidth="200" text="Medicine Name" />
+                                        <TableColumn fx:id="colGenericName" minWidth="120" prefWidth="180" text="Generic Name" />
+                                        <TableColumn fx:id="colQuantity" minWidth="80" prefWidth="100" text="Quantity" />
+                                        <TableColumn fx:id="colUnitPrice" minWidth="90" prefWidth="110" text="Unit Price" />
+                                        <TableColumn fx:id="colSubtotal" minWidth="90" prefWidth="110" text="Subtotal" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+
+                        <!-- Summary Section -->
+                        <HBox spacing="15.0">
+                            <children>
+                                <!-- Notes Section (if needed in future) -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-color: #333333; -fx-border-radius: 12; -fx-border-width: 2; -fx-padding: 15;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11; -fx-font-weight: bold;" text="ORDER DETAILS">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox spacing="10.0">
+                                            <children>
+                                                <Label style="-fx-text-fill: #cccccc; -fx-font-size: 13;" text="Total Items:">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="totalItemsLabel" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13;" text="5">
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Total Amount Section -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-color: #00ff88; -fx-border-radius: 12; -fx-border-width: 2; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0, 255, 136, 0.2), 10, 0, 0, 0);">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11; -fx-font-weight: bold;" text="TOTAL AMOUNT">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="totalAmountLabel" style="-fx-text-fill: #00ff88; -fx-font-size: 24; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0, 255, 136, 0.3), 5, 0, 0, 0);" text="Rs. 15,000.00">
+                                            <font>
+                                                <Font name="System Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER_RIGHT" prefHeight="80.0" prefWidth="700.0" spacing="12.0" style="-fx-background-color: linear-gradient(to top, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 2 0 0 0;" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#handleClose" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-border-color: #666666; -fx-border-radius: 21; -fx-border-width: 2; -fx-cursor: hand;" text="Close">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets right="25.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="dashboard-root" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.DashboardController">
+    <children>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <VBox spacing="20.0" styleClass="dashboard-root">
+                    <children>
+                        <!-- Header Section -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" styleClass="dashboard-header">
+                            <children>
+                                <VBox alignment="CENTER" style="-fx-background-color: transparent; -fx-background-radius: 50; -fx-padding: 15;">
+                                    <children>
+                                        <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/icons8-dashboard-50.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="3.0">
+                                    <children>
+                                        <Label styleClass="dashboard-title" text="Dashboard">
+                                            <font>
+                                                <Font name="System Bold" size="32.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="welcomeLabel" styleClass="dashboard-subtitle" text="Welcome back, Admin!">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="30.0" top="20.0" />
+                            </padding>
+                        </HBox>
+
+                        <!-- Statistics Cards Grid -->
+                        <GridPane hgap="15.0" vgap="15.0">
+                            <padding>
+                                <Insets left="20.0" right="20.0" />
+                            </padding>
+
+                            <!-- Total Appointments Card -->
+                            <VBox spacing="10.0" styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <children>
+                                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                        <children>
+                                            <VBox alignment="CENTER" styleClass="stat-icon-container">
+                                                <children>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../image/icons8-appointment-50.png" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="2.0">
+                                                <children>
+                                                    <Label styleClass="stat-label" text="Total Appointments">
+                                                        <font>
+                                                            <Font size="12.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <Label fx:id="totalAppointmentsLabel" styleClass="stat-value" text="0">
+                                                        <font>
+                                                            <Font name="System Bold" size="28.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <Label fx:id="appointmentsTrendLabel" styleClass="stat-trend-positive" text="↗ +12% from last month">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+
+                            <!-- Total Pets Card -->
+                            <VBox spacing="10.0" styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <children>
+                                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                        <children>
+                                            <VBox alignment="CENTER" styleClass="stat-icon-container">
+                                                <children>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../image/icons8-pet-64.png" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="2.0">
+                                                <children>
+                                                    <Label styleClass="stat-label" text="Total Pets">
+                                                        <font>
+                                                            <Font size="12.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <Label fx:id="totalPetsLabel" styleClass="stat-value" text="0">
+                                                        <font>
+                                                            <Font name="System Bold" size="28.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <Label fx:id="petsTrendLabel" styleClass="stat-trend-positive" text="↗ +8 new this week">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+
+                            <!-- Active Doctors Card -->
+                            <VBox spacing="10.0" styleClass="stat-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                <children>
+                                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                        <children>
+                                            <VBox alignment="CENTER" styleClass="stat-icon-container">
+                                                <children>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../image/icons8-doctor-64.png" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="2.0">
+                                                <children>
+                                                    <Label styleClass="stat-label" text="Active Doctors">
+                                                        <font>
+                                                            <Font size="12.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <Label fx:id="activeDoctorsLabel" styleClass="stat-value" text="0">
+                                                        <font>
+                                                            <Font name="System Bold" size="28.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <Label fx:id="doctorsTrendLabel" styleClass="stat-trend-neutral" text="Available today">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+
+                            <!-- Total Revenue Card -->
+                            <VBox spacing="10.0" styleClass="stat-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                                <children>
+                                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                        <children>
+                                            <VBox alignment="CENTER" styleClass="stat-icon-container">
+                                                <children>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../image/icons8-money-50.png" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="2.0">
+                                                <children>
+                                                    <Label styleClass="stat-label" text="Total Revenue">
+                                                        <font>
+                                                            <Font size="12.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <Label fx:id="totalRevenueLabel" styleClass="revenue-value" text="Rs. 0">
+                                                        <font>
+                                                            <Font name="System Bold" size="24.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <Label fx:id="revenueTrendLabel" styleClass="stat-trend-positive" text="↗ +15% from last month">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+                            <columnConstraints>
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                            </rowConstraints>
+                        </GridPane>
+
+                        <!-- Charts Section -->
+                        <HBox spacing="15.0">
+                            <padding>
+                                <Insets left="20.0" right="20.0" />
+                            </padding>
+                            <children>
+                                <!-- Appointments Chart -->
+                                <VBox spacing="10.0" styleClass="chart-container" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label styleClass="chart-title" text="Appointments Overview">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <LineChart fx:id="appointmentsChart" prefHeight="250.0" styleClass="chart">
+                                            <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                        </LineChart>
+                                    </children>
+                                </VBox>
+
+                                <!-- Revenue Chart -->
+                                <VBox spacing="10.0" styleClass="chart-container" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label styleClass="chart-title" text="Monthly Revenue">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <BarChart fx:id="revenueChart" prefHeight="250.0" styleClass="chart">
+                                            <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                        </BarChart>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Quick Stats Section -->
+                        <GridPane hgap="15.0" vgap="15.0">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" />
+                            </padding>
+
+                            <!-- Low Stock Medicines -->
+                            <VBox spacing="10.0" styleClass="quick-stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="quick-stat-title" text="⚠️ Low Stock Medicines">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="lowStockLabel" styleClass="quick-stat-value-warning" text="0 medicines below reorder level">
+                                        <font>
+                                            <Font size="12.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+
+                            <!-- Today's Appointments -->
+                            <VBox spacing="10.0" styleClass="quick-stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="quick-stat-title" text="📅 Today's Appointments">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="todayAppointmentsLabel" styleClass="quick-stat-value-info" text="0 appointments scheduled">
+                                        <font>
+                                            <Font size="12.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+
+                            <!-- Pending Payments -->
+                            <VBox spacing="10.0" styleClass="quick-stat-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="quick-stat-title" text="💳 Pending Payments">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="pendingPaymentsLabel" styleClass="quick-stat-value-danger" text="Rs. 0 pending">
+                                        <font>
+                                            <Font size="12.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+
+                            <!-- Pet Owners -->
+                            <VBox spacing="10.0" styleClass="quick-stat-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="quick-stat-title" text="👥 Total Pet Owners">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="totalOwnersLabel" styleClass="quick-stat-value-normal" text="0 registered owners">
+                                        <font>
+                                            <Font size="12.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </VBox>
+                            <columnConstraints>
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

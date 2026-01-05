@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="70.0" prefWidth="1011.0" styleClass="doctor-card-root" stylesheets="@../css/doctorCard.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.DoctorCardController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- ID Section with Icon -->
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="100.0" spacing="8.0" styleClass="doctor-card-id-section">
+               <children>
+                  <Label fx:id="id" styleClass="doctor-card-id" text="D001">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+
+            <!-- Name Section -->
+            <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="220.0" spacing="2.0" styleClass="doctor-card-name-section">
+               <children>
+                  <Label styleClass="doctor-card-field-label" text="Doctor Name">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name" styleClass="doctor-card-name" text="Dr. John Smith">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </VBox>
+
+            <!-- Email Section -->
+            <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="240.0" spacing="2.0" styleClass="doctor-card-email-section">
+               <children>
+                  <Label styleClass="doctor-card-field-label" text="Email Address">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="email" styleClass="doctor-card-email" text="john.smith@petclinic.com">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <!-- Availability Section -->
+            <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="180.0" spacing="2.0" styleClass="doctor-card-availability-section">
+               <children>
+                  <Label styleClass="doctor-card-field-label" text="Availability">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="availableBox" prefHeight="32.0" prefWidth="160.0" promptText="Select status" styleClass="doctor-card-combo" />
+               </children>
+            </VBox>
+
+            <!-- Action Buttons Section -->
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="210.0" spacing="10.0" styleClass="doctor-card-actions-section" HBox.hgrow="ALWAYS">
+               <children>
+                  <!-- Edit Button -->
+                  <Button fx:id="edit" mnemonicParsing="false" onAction="#editDoctor" prefHeight="36.0" prefWidth="90.0" styleClass="doctor-card-edit-btn" text="Edit">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="doctor-card-btn-icon">
+                           <image>
+                              <Image url="@../image/icons8-edit-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+
+                  <!-- Delete Button -->
+                  <Button fx:id="delete" mnemonicParsing="false" onAction="#deleteDoctor" prefHeight="36.0" prefWidth="90.0" styleClass="doctor-card-delete-btn" text="Delete">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="doctor-card-btn-icon">
+                           <image>
+                              <Image url="@../image/icons8-delete-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

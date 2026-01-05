@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="620.0" prefWidth="500.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.AddMedicine">
+    <children>
+        <BorderPane prefHeight="620.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <!-- Header Section -->
+                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0" spacing="8.0" style="-fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 0 0 2 0;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);" text="Add / Edit Medicine">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Label style="-fx-text-fill: #999999; -fx-font-size: 12;" text="Manage medicine inventory">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                </VBox>
+            </top>
+            <center>
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: #1a1a1a; -fx-background-color: #1a1a1a;" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+                    <content>
+                        <VBox prefWidth="480.0" spacing="12.0" style="-fx-background-color: #1a1a1a;">
+                            <children>
+                                <!-- Medicine Name Field -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Medicine Name *">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-medicine-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="medicineName" prefWidth="400.0" promptText="Enter medicine brand name" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Generic Name Field -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Generic Name *">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-dna-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="genericName" prefWidth="400.0" promptText="Enter generic/chemical name" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Unit Field -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Unit *">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-package-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="unit" prefWidth="400.0" promptText="e.g., Tablet, Capsule, Bottle, Syrup" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Pricing Section -->
+                                <HBox spacing="12.0">
+                                    <children>
+                                        <!-- Buying Price -->
+                                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label style="-fx-text-fill: #FF9800; -fx-font-weight: bold; -fx-font-size: 12;" text="Buying Price (Rs.) *">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                                    <children>
+                                                        <Label style="-fx-text-fill: #FF9800; -fx-font-size: 14; -fx-font-weight: bold;" text="Rs.">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TextField fx:id="buyingPrice" prefWidth="150.0" promptText="0.00" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </TextField>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Selling Price -->
+                                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label style="-fx-text-fill: #4CAF50; -fx-font-weight: bold; -fx-font-size: 12;" text="Selling Price (Rs.) *">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                                    <children>
+                                                        <Label style="-fx-text-fill: #4CAF50; -fx-font-size: 14; -fx-font-weight: bold;" text="Rs.">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TextField fx:id="sellingPrice" prefWidth="150.0" promptText="0.00" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </TextField>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <!-- Stock Section -->
+                                <HBox spacing="12.0">
+                                    <children>
+                                        <!-- Current Stock -->
+                                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Current Stock *">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                                    <children>
+                                                        <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/icons8-stock-50.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <TextField fx:id="currentStock" prefWidth="150.0" promptText="0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </TextField>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Reorder Level -->
+                                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Reorder Level *">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                                    <children>
+                                                        <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../image/icons8-warning-50.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <TextField fx:id="reorderLevel" prefWidth="150.0" promptText="10" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </TextField>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <!-- Image Upload -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Medicine Image (Optional)">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="uploadImageBtn" mnemonicParsing="false" onAction="#uploadImage" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 18; -fx-border-color: #666666; -fx-border-radius: 18; -fx-border-width: 2; -fx-cursor: hand; -fx-font-size: 12;" text="Upload Image">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-upload-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </center>
+            <bottom>
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="500.0" spacing="12.0" style="-fx-background-color: linear-gradient(to top, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 2 0 0 0;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveMedicine" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);" text="Save">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancel" prefHeight="42.0" prefWidth="130.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-border-color: #666666; -fx-border-radius: 21; -fx-border-width: 2; -fx-cursor: hand;" text="Cancel">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets right="25.0" />
+                    </padding>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

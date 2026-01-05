@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="366.0" prefWidth="210.0" styleClass="pet-card-root" stylesheets="@../css/petCard.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.PetCard">
+   <children>
+      <BorderPane prefHeight="340.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="210.0" styleClass="pet-card-header" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="pname" styleClass="pet-card-name" text="Pet Name">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" BorderPane.alignment="CENTER">
+               <children>
+                  <!-- Image Container -->
+                  <VBox alignment="CENTER" styleClass="pet-card-image-container">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="petImage" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" styleClass="pet-card-image" />
+                     </children>
+                  </VBox>
+
+                  <!-- Info Section -->
+                  <VBox spacing="5.0" styleClass="pet-card-info-section">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="22.0" spacing="5.0">
+                           <children>
+                              <Label prefWidth="70.0" styleClass="pet-card-info-label" text="DoB:">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dob" styleClass="pet-card-info-value" text="-">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="22.0" spacing="5.0">
+                           <children>
+                              <Label prefWidth="70.0" styleClass="pet-card-info-label" text="Gender:">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="pgen" styleClass="pet-card-info-value" text="-">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="22.0" spacing="5.0">
+                           <children>
+                              <Label prefWidth="70.0" styleClass="pet-card-info-label" text="Breed:">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="breed" styleClass="pet-card-info-value" text="-">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Medical History Link -->
+                  <HBox alignment="CENTER" prefHeight="28.0">
+                     <children>
+                        <Hyperlink fx:id="medicalHistoryLink" styleClass="pet-card-medical-link" text="📋 Medical History">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER" prefHeight="50.0" spacing="10.0" styleClass="pet-card-footer" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editPet" prefHeight="32.0" prefWidth="80.0" styleClass="pet-card-edit-btn" text="Edit">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deletePet" prefHeight="32.0" prefWidth="80.0" styleClass="pet-card-delete-btn" text="Delete">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

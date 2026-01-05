@@ -1,0 +1,172 @@
+/* ============================================
+   EDIT-PET-OWNER.CSS - Edit Pet Owner Form Styles
+   ============================================ */
+
+/* Root Container */
+.edit-pet-owner-root {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Header Section */
+.edit-pet-owner-header {
+    -fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a);
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 2 0;
+}
+
+.edit-pet-owner-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);
+}
+
+.edit-pet-owner-subtitle {
+    -fx-text-fill: #999999;
+    -fx-font-size: 12;
+}
+
+/* Form Content */
+.edit-pet-owner-form {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Field Group */
+.edit-pet-owner-field-group {
+    -fx-background-color: #0d0d0d;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+}
+
+.edit-pet-owner-field-group:hover {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Field Label */
+.edit-pet-owner-field-label {
+    -fx-text-fill: #cccccc;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+/* Input Container */
+.edit-pet-owner-input-container {
+    -fx-background-color: #262626;
+    -fx-background-radius: 8;
+    -fx-border-color: #404040;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+.edit-pet-owner-input-container:hover {
+    -fx-border-color: #666666;
+}
+
+/* TextField Styling */
+.edit-pet-owner-textfield {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-border-width: 0;
+    -fx-font-size: 13;
+}
+
+.edit-pet-owner-textfield:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Input Icons */
+.edit-pet-owner-input-icon {
+    -fx-opacity: 0.6;
+}
+
+.edit-pet-owner-input-container:hover .edit-pet-owner-input-icon {
+    -fx-opacity: 0.8;
+}
+
+/* Action Buttons Section */
+.edit-pet-owner-actions {
+    -fx-background-color: linear-gradient(to top, #000000, #1a1a1a);
+    -fx-border-color: #333333;
+    -fx-border-width: 2 0 0 0;
+}
+
+/* Save Button */
+.edit-pet-owner-save-btn {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-radius: 21;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);
+}
+
+.edit-pet-owner-save-btn:hover {
+    -fx-background-color: #00ff88;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.6), 12, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.edit-pet-owner-save-btn:pressed {
+    -fx-background-color: #00cc66;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Cancel Button */
+.edit-pet-owner-cancel-btn {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-radius: 21;
+    -fx-border-color: #666666;
+    -fx-border-radius: 21;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+}
+
+.edit-pet-owner-cancel-btn:hover {
+    -fx-background-color: #ff4444;
+    -fx-border-color: #ff6666;
+    -fx-effect: dropshadow(gaussian, rgba(255,68,68,0.5), 10, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.edit-pet-owner-cancel-btn:pressed {
+    -fx-background-color: #cc0000;
+    -fx-border-color: #ff0000;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* ScrollPane (if needed) */
+.edit-pet-owner-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.edit-pet-owner-scroll > .viewport {
+    -fx-background-color: #1a1a1a;
+}
+
+.edit-pet-owner-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #404040;
+    -fx-background-radius: 5;
+}
+
+.edit-pet-owner-scroll .scroll-bar:vertical .track {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 5;
+}
+
+/* Animations */
+.animated-element {
+    -fx-transition: all 0.2s ease;
+}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="510.0" prefWidth="786.0" styleClass="doctor-root" stylesheets="@../css/doctor.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.DoctorController">
+    <children>
+        <BorderPane fx:id="comb" prefHeight="510.0" prefWidth="786.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <VBox prefHeight="180.0" prefWidth="786.0" spacing="12.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <!-- Header Section with Gradient -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="786.0" styleClass="doctor-header">
+                            <children>
+                                <!-- Title Section -->
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="400.0" spacing="15.0">
+                                    <children>
+                                        <!-- Doctor Icon -->
+                                        <VBox alignment="CENTER" styleClass="doctor-icon-container">
+                                            <children>
+                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-doctor-64.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </VBox>
+
+                                        <VBox spacing="2.0">
+                                            <children>
+                                                <Label styleClass="doctor-title" text="Doctor">
+                                                    <font>
+                                                        <Font name="System Bold" size="32.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label styleClass="doctor-subtitle" text="Manage medical professionals">
+                                                    <font>
+                                                        <Font size="12.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="25.0" />
+                                    </HBox.margin>
+                                </HBox>
+
+                                <!-- Action Buttons Section -->
+                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="350.0" spacing="12.0" HBox.hgrow="ALWAYS">
+                                    <children>
+
+                                        <!-- Add Doctor Button -->
+                                        <Button fx:id="add" mnemonicParsing="false" onAction="#addDoctor" prefHeight="45.0" prefWidth="45.0" styleClass="add-button">
+                                            <graphic>
+                                                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-add-30.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+
+                                        <!-- Refresh Button -->
+                                        <Button fx:id="refresh" mnemonicParsing="false" onAction="#refresh" prefHeight="45.0" prefWidth="45.0" styleClass="refresh-button">
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../image/icons8-refresh-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets right="25.0" />
+                                    </HBox.margin>
+                                </HBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <!-- Search Box Section -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="55.0" styleClass="search-container">
+                            <children>
+                                <!-- Search Icon -->
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="search-icon">
+                                    <image>
+                                        <Image url="@../image/icons8-search-128.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="20.0" right="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+
+                                <TextField fx:id="searchbox" prefHeight="40.0" prefWidth="680.0" promptText="Search Doctor by name, specialization, or ID..." styleClass="search-field" HBox.hgrow="ALWAYS">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+
+                                <!-- Clear Search Button -->
+                                <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="clear-search-button" visible="false">
+                                    <graphic>
+                                        <ImageView fitHeight="18.0" fitWidth="18.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../image/icons8-add-30.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets right="15.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </VBox>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>

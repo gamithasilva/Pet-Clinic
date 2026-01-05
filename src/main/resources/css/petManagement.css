@@ -1,0 +1,229 @@
+/* ============================================
+   PET-MANAGEMENT.CSS - Pet Management Page Styles
+   ============================================ */
+
+/* Root Container */
+.pet-management-root {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Header Section */
+.pet-header {
+    -fx-background-color: linear-gradient(to right, #000000, #1a1a1a, #000000);
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 2 0;
+}
+
+.pet-header:hover {
+    -fx-background-color: linear-gradient(to right, #0d0d0d, #262626, #0d0d0d);
+}
+
+.pet-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 30;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);
+}
+
+.pet-subtitle {
+    -fx-text-fill: #999999;
+    -fx-font-size: 13;
+}
+
+.pet-icon-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50;
+    -fx-padding: 15;
+}
+
+/* TabPane Styling */
+.pet-tab-pane {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: transparent;
+}
+
+.pet-tab-pane .tab-header-area {
+    -fx-background-color: #0d0d0d;
+    -fx-padding: 10 15 0 15;
+}
+
+.pet-tab-pane .tab-header-background {
+    -fx-background-color: #0d0d0d;
+}
+
+/* Individual Tab Styling */
+.pet-tab-pane .tab {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-color: #333333;
+    -fx-border-width: 2 2 0 2;
+    -fx-border-radius: 10 10 0 0;
+    -fx-padding: 12 24 12 24;
+}
+
+.pet-tab-pane .tab:hover {
+    -fx-background-color: #262626;
+    -fx-border-color: #404040;
+}
+
+.pet-tab-pane .tab:selected {
+    -fx-background-color: linear-gradient(to bottom, #0d4d2e, #1a1a1a);
+    -fx-border-color: #00ff88;
+    -fx-border-width: 2 2 0 2;
+}
+
+.pet-tab-pane .tab:selected:hover {
+    -fx-background-color: linear-gradient(to bottom, #0d5535, #1a1a1a);
+}
+
+/* Tab Label Text */
+.pet-tab-pane .tab .tab-label {
+    -fx-text-fill: #999999;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.pet-tab-pane .tab:hover .tab-label {
+    -fx-text-fill: #cccccc;
+}
+
+.pet-tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 136, 0.4), 5, 0, 0, 0);
+}
+
+/* Remove the focus indicator */
+.pet-tab-pane .tab:focused {
+    -fx-background-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Tab Content Area */
+.pet-tab-pane .tab-content-area {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #333333;
+    -fx-border-width: 2 2 2 2;
+    -fx-padding: 0;
+}
+
+/* Search Box Container */
+.pet-search-container {
+    -fx-background-color: #0d0d0d;
+    -fx-background-radius: 12;
+    -fx-border-color: #333333;
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+}
+
+.pet-search-container:hover {
+    -fx-border-color: #404040;
+}
+
+/* Search TextField */
+.pet-search-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-font-size: 13;
+    -fx-border-width: 0;
+}
+
+.pet-search-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Search Icon */
+.pet-search-icon {
+    -fx-opacity: 0.6;
+}
+
+.pet-search-container:hover .pet-search-icon {
+    -fx-opacity: 0.8;
+}
+
+/* Add Button */
+.pet-add-button {
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);
+}
+
+.pet-add-button:hover {
+    -fx-background-color: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.6), 12, 0, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.pet-add-button:pressed {
+    -fx-background-color: #00cc66;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Refresh Button */
+.pet-refresh-button {
+    -fx-background-color: #262626;
+    -fx-background-radius: 25;
+    -fx-border-color: #404040;
+    -fx-border-radius: 25;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+}
+
+.pet-refresh-button:hover {
+    -fx-background-color: #333333;
+    -fx-border-color: #00ff88;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.3), 8, 0, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.pet-refresh-button:pressed {
+    -fx-background-color: #1a1a1a;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Tab Content Background */
+.pet-tab-content {
+    -fx-background-color: #1a1a1a;
+}
+
+/* ScrollPane in tabs (if any) */
+.pet-tab-pane .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.pet-tab-pane .scroll-pane > .viewport {
+    -fx-background-color: #1a1a1a;
+}
+
+.pet-tab-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #404040;
+    -fx-background-radius: 5;
+}
+
+.pet-tab-pane .scroll-bar:vertical .track {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 5;
+}
+
+/* Remove tab close button area (since tabs are not closable) */
+.pet-tab-pane .tab-close-button {
+    -fx-cursor: default;
+}
+
+/* Animations */
+.animated-button {
+    -fx-transition: all 0.2s ease;
+}
+
+/* Tab animation on selection */
+.pet-tab-pane .tab:selected {
+    -fx-transition: all 0.3s ease;
+}

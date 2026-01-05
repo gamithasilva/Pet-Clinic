@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="450.0" styleClass="add-pet-owner-root" stylesheets="@../css/addPetOwner.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.AddPetOwner">
+    <children>
+        <BorderPane prefHeight="540.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <!-- Header Section -->
+                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="450.0" spacing="8.0" styleClass="add-pet-owner-header" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label styleClass="add-pet-owner-title" text="Add Pet Owner">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <Label styleClass="add-pet-owner-subtitle" text="Register new pet owner">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                </VBox>
+            </top>
+            <center>
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="add-pet-owner-scroll" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+                    <content>
+                        <VBox spacing="15.0" styleClass="add-pet-owner-form">
+                            <children>
+                                <!-- Name Field -->
+                                <VBox spacing="8.0" styleClass="add-pet-owner-field-group">
+                                    <children>
+                                        <Label styleClass="add-pet-owner-field-label" text="Owner Name">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="add-pet-owner-input-container">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="add-pet-owner-input-icon">
+                                                    <image>
+                                                        <Image url="@../image/icons8-user-64.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="ownerName" prefWidth="340.0" promptText="Enter owner's full name" styleClass="add-pet-owner-textfield" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Address Field -->
+                                <VBox spacing="8.0" styleClass="add-pet-owner-field-group">
+                                    <children>
+                                        <Label styleClass="add-pet-owner-field-label" text="Address">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="add-pet-owner-input-container">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="add-pet-owner-input-icon">
+                                                    <image>
+                                                        <Image url="@../image/icons8-location-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="ownerAddress" prefWidth="340.0" promptText="123 Main Street, City" styleClass="add-pet-owner-textfield" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Email Field -->
+                                <VBox spacing="8.0" styleClass="add-pet-owner-field-group">
+                                    <children>
+                                        <Label styleClass="add-pet-owner-field-label" text="Email Address">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="add-pet-owner-input-container">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="add-pet-owner-input-icon">
+                                                    <image>
+                                                        <Image url="@../image/icons8-email-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="ownerEmail" prefWidth="340.0" promptText="owner@email.com" styleClass="add-pet-owner-textfield" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Phone Field -->
+                                <VBox spacing="8.0" styleClass="add-pet-owner-field-group">
+                                    <children>
+                                        <Label styleClass="add-pet-owner-field-label" text="Phone Number">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="add-pet-owner-input-container">
+                                            <children>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="add-pet-owner-input-icon">
+                                                    <image>
+                                                        <Image url="@../image/icons8-phone-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <TextField fx:id="ownerPhone" prefWidth="340.0" promptText="+1 234 567 8900" styleClass="add-pet-owner-textfield" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </center>
+            <bottom>
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="450.0" spacing="12.0" styleClass="add-pet-owner-actions" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#savePetOwner" prefHeight="42.0" prefWidth="120.0" styleClass="add-pet-owner-save-btn" text="Save Owner">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancel" prefHeight="42.0" prefWidth="120.0" styleClass="add-pet-owner-cancel-btn" text="Cancel">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets right="25.0" />
+                    </padding>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

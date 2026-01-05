@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.petclinic.controller.CompleteAppointmentController"
+            style="-fx-background-color: #1a1a1a;" prefWidth="900" prefHeight="700">
+
+    <!-- Top Header -->
+    <top>
+        <VBox spacing="15" style="-fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 0 0 2 0;">
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <!-- Title Section -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <children>
+                    <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 30; -fx-padding: 12;">
+                        <children>
+                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/icons8-medical-50.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="2">
+                        <children>
+                            <Label fx:id="titleLabel" text="Complete Appointment #A001" style="-fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);">
+                                <font>
+                                    <Font name="System Bold" size="24"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="subtitleLabel" text="Add medicines and medical history" style="-fx-text-fill: #999999; -fx-font-size: 13;">
+                                <font>
+                                    <Font size="13"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+            <!-- Appointment Info Cards -->
+            <HBox spacing="15">
+                <children>
+                    <!-- Pet Info Card -->
+                    <VBox spacing="5" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-border-color: #333333; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label text="🐾 PET" style="-fx-text-fill: #666666; -fx-font-size: 10; -fx-font-weight: bold;">
+                                <font>
+                                    <Font name="System Bold" size="10"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="petInfoLabel" text="Max (Dog)" style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold;">
+                                <font>
+                                    <Font name="System Bold" size="14"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+
+                    <!-- Doctor Info Card -->
+                    <VBox spacing="5" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-border-color: #333333; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label text="👨‍⚕️ DOCTOR" style="-fx-text-fill: #666666; -fx-font-size: 10; -fx-font-weight: bold;">
+                                <font>
+                                    <Font name="System Bold" size="10"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="doctorInfoLabel" text="Dr. Smith" style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold;">
+                                <font>
+                                    <Font name="System Bold" size="14"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+
+                    <!-- Fee Info Card -->
+                    <VBox spacing="5" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-border-color: #00ff88; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 12;">
+                        <children>
+                            <Label text="💰 FEE" style="-fx-text-fill: #666666; -fx-font-size: 10; -fx-font-weight: bold;">
+                                <font>
+                                    <Font name="System Bold" size="10"/>
+                                </font>
+                            </Label>
+                            <Label fx:id="feeLabel" text="Rs. 2,500.00" style="-fx-text-fill: #00ff88; -fx-font-size: 14; -fx-font-weight: bold;">
+                                <font>
+                                    <Font name="System Bold" size="14"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Main Content Area -->
+    <center>
+        <SplitPane dividerPositions="0.45" style="-fx-background-color: #1a1a1a;">
+
+            <!-- LEFT PANEL - Medicine Selection -->
+            <VBox spacing="12" style="-fx-background-color: #0d0d0d; -fx-border-color: #333333; -fx-border-width: 0 1 0 0;">
+                <padding>
+                    <Insets top="20" right="15" bottom="15" left="20"/>
+                </padding>
+
+                <Label text="Prescribed Medicines" style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <font>
+                        <Font name="System Bold" size="16"/>
+                    </font>
+                </Label>
+
+                <!-- Medicine Selection -->
+                <VBox spacing="10">
+                    <children>
+                        <Label text="Select Medicine" style="-fx-text-fill: #cccccc; -fx-font-size: 12;">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="medicineComboBox" prefWidth="380" prefHeight="38" promptText="Choose medicine..." style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 10; -fx-border-color: #404040; -fx-border-radius: 10; -fx-border-width: 2;"/>
+                    </children>
+                </VBox>
+
+                <!-- Stock Info -->
+                <VBox fx:id="stockInfoCard" spacing="5" style="-fx-background-color: #262626; -fx-background-radius: 10; -fx-padding: 12; -fx-border-color: #404040; -fx-border-radius: 10; -fx-border-width: 1;" visible="false" managed="false">
+                    <children>
+                        <Label text="📦 Stock Information" style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 11;">
+                            <font>
+                                <Font name="System Bold" size="11"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="stockInfoLabel" text="Available: 100 units | Price: Rs. 50.00" style="-fx-text-fill: #00ff88; -fx-font-size: 12;" wrapText="true">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Quantity Input -->
+                <VBox spacing="8">
+                    <children>
+                        <Label text="Quantity" style="-fx-text-fill: #cccccc; -fx-font-size: 12;">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Label>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <children>
+                                <Button fx:id="decreaseBtn" text="-" onAction="#handleDecreaseQuantity" prefWidth="40" prefHeight="40" style="-fx-background-color: #404040; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 20; -fx-background-radius: 20; -fx-cursor: hand; -fx-border-color: #666666; -fx-border-radius: 20; -fx-border-width: 2;">
+                                    <font>
+                                        <Font name="System Bold" size="20"/>
+                                    </font>
+                                </Button>
+                                <TextField fx:id="quantityField" text="1" alignment="CENTER" prefWidth="80" prefHeight="40" style="-fx-background-color: #1a1a1a; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18; -fx-background-radius: 10; -fx-border-color: #666666; -fx-border-radius: 10; -fx-border-width: 2;">
+                                    <font>
+                                        <Font name="System Bold" size="18"/>
+                                    </font>
+                                </TextField>
+                                <Button fx:id="increaseBtn" text="+" onAction="#handleIncreaseQuantity" prefWidth="40" prefHeight="40" style="-fx-background-color: #404040; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 20; -fx-background-radius: 20; -fx-cursor: hand; -fx-border-color: #666666; -fx-border-radius: 20; -fx-border-width: 2;">
+                                    <font>
+                                        <Font name="System Bold" size="20"/>
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Add Medicine Button -->
+                <Button fx:id="addMedicineBtn" text="Add Medicine ➜" onAction="#handleAddMedicine" prefWidth="250" prefHeight="45" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 23; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0); -fx-font-size: 14;">
+                    <font>
+                        <Font name="System Bold" size="14"/>
+                    </font>
+                </Button>
+
+                <!-- Medical History Section -->
+                <Separator style="-fx-background-color: #333333;"/>
+
+                <Label text="Medical History" style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <font>
+                        <Font name="System Bold" size="16"/>
+                    </font>
+                </Label>
+
+                <TextArea fx:id="medicalHistoryArea" prefHeight="150" promptText="Enter diagnosis, treatment notes, observations..." style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 10; -fx-border-color: #404040; -fx-border-radius: 10; -fx-border-width: 2; -fx-font-size: 13;" wrapText="true" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font size="13"/>
+                    </font>
+                </TextArea>
+            </VBox>
+
+            <!-- RIGHT PANEL - Medicine List & Summary -->
+            <VBox spacing="12" style="-fx-background-color: #1a1a1a;">
+                <padding>
+                    <Insets top="20" right="20" bottom="15" left="15"/>
+                </padding>
+
+                <Label text="Prescribed Items" style="-fx-text-fill: white; -fx-font-weight: bold;">
+                    <font>
+                        <Font name="System Bold" size="16"/>
+                    </font>
+                </Label>
+
+                <!-- Medicine Table -->
+                <TableView fx:id="medicineTable" VBox.vgrow="ALWAYS" style="-fx-background-color: #0d0d0d; -fx-border-color: #333333; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+                    <columns>
+                        <TableColumn fx:id="colMedicineName" text="Medicine" prefWidth="150" minWidth="120"/>
+                        <TableColumn fx:id="colQuantity" text="Qty" prefWidth="60" minWidth="50"/>
+                        <TableColumn fx:id="colPrice" text="Price" prefWidth="80" minWidth="70"/>
+                        <TableColumn fx:id="colSubtotal" text="Subtotal" prefWidth="90" minWidth="80"/>
+                        <TableColumn fx:id="colAction" text="Action" prefWidth="70" minWidth="60"/>
+                    </columns>
+                    <placeholder>
+                        <VBox alignment="CENTER" spacing="10">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/icons8-medicine-50.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="No medicines added" style="-fx-text-fill: #666666; -fx-font-size: 14;">
+                                    <font>
+                                        <Font size="14"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </placeholder>
+                </TableView>
+
+                <!-- Summary Section -->
+                <VBox spacing="12" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-color: #333333; -fx-border-radius: 12; -fx-border-width: 2; -fx-padding: 20;">
+                    <children>
+                        <Label text="Bill Summary" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14;">
+                            <font>
+                                <Font name="System Bold" size="14"/>
+                            </font>
+                        </Label>
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <children>
+                                <Label text="Consultation Fee:" style="-fx-text-fill: #cccccc; -fx-font-size: 13;">
+                                    <font>
+                                        <Font size="13"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="consultationFeeLabel" text="Rs. 2,500.00" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13;">
+                                    <font>
+                                        <Font name="System Bold" size="13"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <children>
+                                <Label text="Medicine Total:" style="-fx-text-fill: #cccccc; -fx-font-size: 13;">
+                                    <font>
+                                        <Font size="13"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="medicineTotalLabel" text="Rs. 0.00" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13;">
+                                    <font>
+                                        <Font name="System Bold" size="13"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <Separator style="-fx-background-color: #333333;"/>
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <children>
+                                <Label text="Total Amount:" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;">
+                                    <font>
+                                        <Font name="System Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="totalAmountLabel" text="Rs. 2,500.00" style="-fx-text-fill: #00ff88; -fx-font-weight: bold; -fx-font-size: 20; -fx-effect: dropshadow(gaussian, rgba(0,255,136,0.3), 5, 0, 0, 0);">
+                                    <font>
+                                        <Font name="System Bold" size="20"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </VBox>
+        </SplitPane>
+    </center>
+
+    <!-- Bottom Action Buttons -->
+    <bottom>
+        <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-background-color: linear-gradient(to top, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 2 0 0 0; -fx-padding: 20;">
+            <padding>
+                <Insets top="20" right="25" bottom="20" left="25"/>
+            </padding>
+
+            <Button fx:id="cancelBtn" text="Cancel" onAction="#handleCancel" prefWidth="130" prefHeight="45" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 23; -fx-border-color: #666666; -fx-border-radius: 23; -fx-border-width: 2; -fx-cursor: hand; -fx-font-size: 13;">
+                <font>
+                    <Font name="System Bold" size="13"/>
+                </font>
+            </Button>
+
+            <Button fx:id="completeBtn" text="Complete Appointment" onAction="#handleComplete" prefWidth="200" prefHeight="45" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 23; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 10, 0, 0, 0); -fx-font-size: 14;">
+                <font>
+                    <Font name="System Bold" size="14"/>
+                </font>
+            </Button>
+        </HBox>
+    </bottom>
+
+</BorderPane>

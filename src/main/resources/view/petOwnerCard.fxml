@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="70.0" prefWidth="971.0" styleClass="pet-owner-card-root" stylesheets="@../css/petOwnerCard.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.PetOwnerCard">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- ID Section with Icon -->
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="100.0" spacing="8.0" styleClass="pet-owner-card-id-section">
+                    <children>
+                        <Label fx:id="poid" styleClass="pet-owner-card-id" text="PO001">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- Name Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="170.0" spacing="2.0" styleClass="pet-owner-card-name-section">
+                    <children>
+                        <Label styleClass="pet-owner-card-field-label" text="Owner Name">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="poname" styleClass="pet-owner-card-name" text="John Smith">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                </VBox>
+
+                <!-- Email Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0" spacing="2.0" styleClass="pet-owner-card-email-section">
+                    <children>
+                        <Label styleClass="pet-owner-card-field-label" text="Email Address">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="poemail" styleClass="pet-owner-card-email" text="john.smith@email.com">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Address Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="180.0" spacing="2.0" styleClass="pet-owner-card-address-section">
+                    <children>
+                        <Label styleClass="pet-owner-card-field-label" text="Address">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="poad" styleClass="pet-owner-card-address" text="123 Main Street, City">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Phone Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="140.0" spacing="2.0" styleClass="pet-owner-card-phone-section">
+                    <children>
+                        <Label styleClass="pet-owner-card-field-label" text="Phone">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="pophone" styleClass="pet-owner-card-phone" text="+1 234 567 8900">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Action Buttons Section -->
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" spacing="10.0" styleClass="pet-owner-card-actions-section" HBox.hgrow="ALWAYS">
+                    <children>
+                        <!-- Edit Button -->
+                        <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editOwner" prefHeight="36.0" prefWidth="85.0" styleClass="pet-owner-card-edit-btn" text="Edit">
+                            <graphic>
+                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="pet-owner-card-btn-icon">
+                                    <image>
+                                        <Image url="@../image/icons8-edit-96.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+
+                        <!-- Delete Button -->
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteOwner" prefHeight="36.0" prefWidth="85.0" styleClass="pet-owner-card-delete-btn" text="Delete">
+                            <graphic>
+                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" styleClass="pet-owner-card-btn-icon">
+                                    <image>
+                                        <Image url="@../image/icons8-delete-96.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>

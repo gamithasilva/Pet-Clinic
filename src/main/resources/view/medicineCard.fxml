@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #333333; -fx-border-width: 2; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 10, 0, 0, 3);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.MedicineCard">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Medicine Image Section -->
+                <VBox alignment="CENTER" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #1a1a1a; -fx-background-radius: 12 0 0 12; -fx-border-color: #333333; -fx-border-width: 0 1 0 0;">
+                    <children>
+                        <ImageView fx:id="medicineImage" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/default-medicine.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </VBox>
+
+                <!-- Medicine ID Section -->
+                <HBox alignment="CENTER" prefHeight="90.0" prefWidth="70.0" spacing="8.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-width: 1;">
+                    <children>
+                        <Label fx:id="medicineId" style="-fx-text-fill: #4CAF50; -fx-font-weight: bold; -fx-font-size: 14;" text="M001">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- Name & Generic Name Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="180.0" spacing="3.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Medicine Name">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="medicineName" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13;" text="Panadol" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="genericName" style="-fx-text-fill: #999999; -fx-font-size: 11; -fx-font-style: italic;" text="Paracetamol" wrapText="true">
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                </VBox>
+
+                <!-- Unit Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="80.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Unit">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="unit" style="-fx-text-fill: #cccccc; -fx-font-size: 12; -fx-font-weight: bold;" text="Tablet">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Stock Section with Color Indicator -->
+                <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="100.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Current Stock">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                            <children>
+                                <Label fx:id="currentStock" style="-fx-text-fill: #4CAF50; -fx-font-size: 14; -fx-font-weight: bold;" text="500">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="stockStatus" style="-fx-text-fill: #4CAF50; -fx-font-size: 9; -fx-background-color: rgba(76, 175, 80, 0.2); -fx-background-radius: 8; -fx-padding: 2 6 2 6;" text="In Stock">
+                                    <font>
+                                        <Font name="System Bold" size="9.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Label fx:id="reorderLevel" style="-fx-text-fill: #666666; -fx-font-size: 9;" text="Reorder at: 100">
+                            <font>
+                                <Font size="9.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Pricing Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="130.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Pricing">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                            <children>
+                                <VBox spacing="1.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 9;" text="Buy">
+                                            <font>
+                                                <Font size="9.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="buyingPrice" style="-fx-text-fill: #FF9800; -fx-font-size: 11; -fx-font-weight: bold;" text="Rs. 2.50">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox spacing="1.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 9;" text="Sell">
+                                            <font>
+                                                <Font size="9.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="sellingPrice" style="-fx-text-fill: #4CAF50; -fx-font-size: 11; -fx-font-weight: bold;" text="Rs. 5.00">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Action Buttons Section -->
+                <HBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <!-- Edit Button -->
+                        <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editMedicine" prefHeight="36.0" prefWidth="75.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 18; -fx-cursor: hand; -fx-font-size: 12; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 5, 0, 0, 0);" text="Edit">
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/icons8-edit-96.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+
+                        <!-- Delete Button -->
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteMedicine" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 18; -fx-border-color: #666666; -fx-border-radius: 18; -fx-border-width: 2; -fx-cursor: hand; -fx-font-size: 12;" text="Delete">
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/icons8-delete-96.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>

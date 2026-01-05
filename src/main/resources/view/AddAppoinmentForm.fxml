@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.AddAppointmentController">
+    <children>
+        <VBox spacing="0.0" style="-fx-background-color: #1a1a1a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Header Section -->
+                <VBox alignment="CENTER" prefHeight="100.0" spacing="8.0" style="-fx-background-color: linear-gradient(to bottom, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 0 0 2 0;">
+                    <children>
+
+                        <Label style="-fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 8, 0, 0, 0);" text="Schedule Appointment">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <Label style="-fx-text-fill: #999999; -fx-font-size: 12;" text="Book a new appointment for pet">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets top="15.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Form Fields Section -->
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: #1a1a1a; -fx-background-color: #1a1a1a;" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox spacing="15.0" style="-fx-background-color: #1a1a1a;">
+                            <children>
+                                <!-- Pet Owner Selection -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Pet Owner">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="petOwnerComboBox" prefHeight="38" prefWidth="460.0" promptText="Select Pet Owner" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1;" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Pet Selection -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Pet">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="petComboBox" prefHeight="38" prefWidth="460.0" promptText="Select Pet" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1;" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Pet Info Display -->
+                                <VBox fx:id="petInfoCard" managed="false" spacing="5.0" style="-fx-background-color: #262626; -fx-background-radius: 10; -fx-padding: 12; -fx-border-color: #404040; -fx-border-radius: 10; -fx-border-width: 1;" visible="false">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 11;" text="🐾 Pet Information">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="petInfoLabel" style="-fx-text-fill: #00ff88; -fx-font-size: 12;" text="Species: Dog | Breed: Labrador" wrapText="true">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <!-- Doctor Selection -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Doctor">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="doctorComboBox" prefHeight="38" prefWidth="460.0" promptText="Select Doctor" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1;" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Date and Time -->
+                                <HBox spacing="15.0">
+                                    <children>
+                                        <!-- Date Picker -->
+                                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Appointment Date">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <DatePicker fx:id="appointmentDatePicker" prefHeight="38" prefWidth="220.0" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1;" />
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Time Picker -->
+                                        <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Time">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                    <children>
+                                                        <ComboBox fx:id="hourComboBox" prefHeight="38" prefWidth="70.0" promptText="HH" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1;" />
+                                                        <Label style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;" text=":">
+                                                            <font>
+                                                                <Font name="System Bold" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <ComboBox fx:id="minuteComboBox" prefHeight="38" prefWidth="70.0" promptText="MM" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1;" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <!-- Consultation Fee -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Consultation Fee">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #262626; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8;">
+                                            <children>
+                                                <Label style="-fx-text-fill: #999999; -fx-font-weight: bold; -fx-font-size: 16;" text="Rs">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="consultationFeeField" prefWidth="420.0" promptText="0.00" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-border-width: 0; -fx-font-size: 13;" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <!-- Notes -->
+                                <VBox spacing="8.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 10; -fx-padding: 12;">
+                                    <children>
+                                        <Label style="-fx-text-fill: #cccccc; -fx-font-weight: bold; -fx-font-size: 12;" text="Notes (Optional)">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="notesArea" prefHeight="80.0" prefWidth="460.0" promptText="Enter appointment notes or special instructions..." style="-fx-background-color: #262626; -fx-text-fill: white; -fx-prompt-text-fill: #666666; -fx-background-radius: 8; -fx-border-color: #404040; -fx-border-radius: 8; -fx-border-width: 1; -fx-font-size: 13;" wrapText="true">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </TextArea>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+                <!-- Action Buttons -->
+                <HBox alignment="CENTER_RIGHT" prefHeight="80.0" prefWidth="500.0" spacing="12.0" style="-fx-background-color: linear-gradient(to top, #000000, #1a1a1a); -fx-border-color: #333333; -fx-border-width: 2 0 0 0;" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#handleCancel" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-border-color: #666666; -fx-border-radius: 21; -fx-border-width: 2; -fx-cursor: hand;" text="Cancel">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 21; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 8, 0, 0, 0);" text="Book Appointment">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets right="25.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

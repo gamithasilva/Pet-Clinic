@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #000000;" stylesheets="@../css/layout.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.LayoutController">
+
+   <children>
+      <BorderPane fx:id="bpane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+         <!-- Sidebar -->
+         <left>
+            <VBox prefWidth="260.0" spacing="8" style="-fx-background-color: linear-gradient(to bottom, #000000, #0d0d0d); -fx-border-color: #333333; -fx-border-width: 0 2 0 0; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 20, 0, 5, 0);" BorderPane.alignment="CENTER">
+
+               <!-- App Logo & Title -->
+               <VBox alignment="CENTER" prefHeight="100.0" spacing="8.0" style="-fx-background-color: #000000; -fx-border-color: #333333; -fx-border-width: 0 0 2 0;">
+                  <children>
+
+                     <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 5, 0, 0, 0);" text="Pet Clinic">
+                        <font>
+                           <Font name="System Bold" size="22.0" />
+                        </font>
+                     </Label>
+
+                     <Label style="-fx-text-fill: #666666; -fx-font-size: 11;" text="Management System">
+                        <font>
+                           <Font size="11.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+
+               <!-- Navigation Section Label -->
+               <Label style="-fx-text-fill: #666666; -fx-font-size: 10; -fx-font-weight: bold;" text="NAVIGATION">
+                  <VBox.margin>
+                     <Insets left="20.0" top="15.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="System Bold" size="10.0" />
+                  </font>
+               </Label>
+
+               <!-- Navigation Buttons -->
+               <Button fx:id="dashboardBtn" alignment="CENTER_LEFT" onAction="#loadDashBoard" prefHeight="48" prefWidth="220" styleClass="nav-button">
+                  <graphic>
+                     <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <children>
+                           <VBox alignment="CENTER" styleClass="icon-container">
+                              <children>
+                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../image/icons8-dashboard-50.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </VBox>
+                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Dashboard">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </VBox.margin>
+               </Button>
+
+               <Button fx:id="petBtn" alignment="CENTER_LEFT" onAction="#loadPet" prefHeight="48" prefWidth="220" styleClass="nav-button">
+                  <graphic>
+                     <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <children>
+                           <VBox alignment="CENTER" styleClass="icon-container">
+                              <children>
+                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../image/icons8-pet-64.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </VBox>
+                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Pet">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </VBox.margin>
+               </Button>
+
+               <Button fx:id="doctorBtn" alignment="CENTER_LEFT" onAction="#loadDoctor" prefHeight="48" prefWidth="220" styleClass="nav-button">
+                  <graphic>
+                     <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <children>
+                           <VBox alignment="CENTER" styleClass="icon-container">
+                              <children>
+                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../image/icons8-doctor-64.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </VBox>
+                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Doctor">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </VBox.margin>
+               </Button>
+
+               <Button fx:id="appointmentBtn" alignment="CENTER_LEFT" onAction="#loadAppointment" prefHeight="48" prefWidth="220" styleClass="nav-button">
+                  <graphic>
+                     <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <children>
+                           <VBox alignment="CENTER" styleClass="icon-container">
+                              <children>
+                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../image/icons8-appointment-50.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </VBox>
+                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Appointment">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </VBox.margin>
+               </Button>
+
+               <Button fx:id="medicineBtn" alignment="CENTER_LEFT" onAction="#loadMedicine" prefHeight="48" prefWidth="220" styleClass="nav-button">
+                  <graphic>
+                     <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <children>
+                           <VBox alignment="CENTER" styleClass="icon-container">
+                              <children>
+                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../image/icons8-medicine-50.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </VBox>
+                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Medicine">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </VBox.margin>
+               </Button>
+
+               <Button fx:id="reportBtn" alignment="CENTER_LEFT" prefHeight="48" prefWidth="220" styleClass="nav-button">
+                  <graphic>
+                     <HBox alignment="CENTER_LEFT" spacing="12.0">
+                        <children>
+                           <VBox alignment="CENTER" styleClass="icon-container">
+                              <children>
+                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../image/icons8-report-50.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </VBox>
+                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Report">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </VBox.margin>
+               </Button>
+
+               <!-- Separator -->
+               <Separator style="-fx-background-color: #333333;">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" top="15.0" />
+                  </VBox.margin>
+               </Separator>
+
+               <!-- User Profile Section -->
+               <VBox alignment="CENTER" spacing="8.0" styleClass="user-profile-card" VBox.vgrow="ALWAYS">
+                  <children>
+                     <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13;" text="Admin User">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font>
+                     </Label>
+                     <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="admin@petclinic.com">
+                        <font>
+                           <Font size="10.0" />
+                        </font>
+                     </Label>
+
+                     <Button prefHeight="32.0" prefWidth="150.0" styleClass="logout-button" text="Logout">
+                        <font>
+                           <Font name="System Bold" size="11.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets top="8.0" />
+                        </VBox.margin>
+                     </Button>
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+                  </VBox.margin>
+               </VBox>
+
+               <padding>
+                  <Insets bottom="10" top="10" />
+               </padding>
+            </VBox>
+         </left>
+
+         <!-- Main Content Area -->
+         <center>
+            <AnchorPane fx:id="contentArea" styleClass="content-area" />
+         </center>
+
+      </BorderPane>
+   </children>
+</AnchorPane>

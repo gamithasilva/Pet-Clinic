@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="80.0" prefWidth="1011.0" style="-fx-background-color: #0d0d0d; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #333333; -fx-border-width: 2; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 10, 0, 0, 3);" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.petclinic.controller.AppointmentCardController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Appointment ID Section -->
+                <HBox alignment="CENTER" prefHeight="80.0" prefWidth="90.0" spacing="8.0" style="-fx-background-color: #1a1a1a; -fx-background-radius: 12 0 0 12; -fx-border-color: #333333; -fx-border-width: 0 1 0 0;">
+                    <children>
+                        <Label fx:id="appointmentId" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14;" text="A001">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- Pet &amp; Owner Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Pet &amp; Owner">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="petNameLabel" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14;" text="Max">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="ownerNameLabel" style="-fx-text-fill: #999999; -fx-font-size: 11;" text="John Doe">
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                </VBox>
+
+                <!-- Doctor Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="170.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Doctor">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="doctorNameLabel" style="-fx-text-fill: #cccccc; -fx-font-size: 13;" text="Dr. Smith">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Date &amp; Time Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="150.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Date &amp; Time">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="dateLabel" style="-fx-text-fill: white; -fx-font-size: 12;" text="2024-01-15">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="timeLabel" style="-fx-text-fill: #00ff88; -fx-font-size: 11; -fx-font-weight: bold;" text="09:00 AM">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Fee Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="120.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Fee">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="feeLabel" style="-fx-text-fill: #00ff88; -fx-font-weight: bold; -fx-font-size: 13;" text="Rs. 2,500.00">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Status Section -->
+                <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="110.0" spacing="2.0">
+                    <children>
+                        <Label style="-fx-text-fill: #666666; -fx-font-size: 10;" text="Status">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="statusLabel" style="-fx-background-color: linear-gradient(to right, #3399ff, #66b3ff); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 11; -fx-background-radius: 12; -fx-padding: 4 12 4 12; -fx-border-color: #66b3ff; -fx-border-radius: 12; -fx-border-width: 1;" text="Scheduled">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Action Buttons Section -->
+                <HBox alignment="CENTER" prefHeight="80.0" prefWidth="180.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <!-- Complete Button (for scheduled appointments) -->
+                        <Button fx:id="completeBtn" mnemonicParsing="false" onAction="#completeAppointment" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 18; -fx-cursor: hand; -fx-font-size: 11; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 5, 0, 0, 0);" text="Complete" visible="true">
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/icons8-checkmark-50.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+
+                        <!-- Cancel Button -->
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelAppointment" prefHeight="36.0" prefWidth="45.0" style="-fx-background-color: #ff4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 18; -fx-cursor: hand;">
+                            <graphic>
+                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/icons8-cancel-50.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <!-- Delete Button -->
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="36.0" prefWidth="45.0" style="-fx-background-color: #262626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 18; -fx-border-color: #666666; -fx-border-radius: 18; -fx-border-width: 2; -fx-cursor: hand;">
+                            <graphic>
+                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/icons8-delete-96.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="5.0" right="5.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>
