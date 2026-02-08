@@ -1,10 +1,14 @@
 package lk.ijse.petclinic.model;
 
+import lk.ijse.petclinic.db.DBConnection;
 import lk.ijse.petclinic.dto.AppointmentMedicineDTO;
 import lk.ijse.petclinic.dto.InvoiceDTO;
 import lk.ijse.petclinic.util.Crudutil;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -250,5 +254,41 @@ public class InvoiceModel {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public double getTotalRevenue() throws SQLException {
+        String sql = "SELECT SUM(total_amount) FROM invoice";
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getDouble(1);
+        }
+        return 0.0;
+    }
+
+    public int getTotalInvoicesCount() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM invoice";
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+        return 0;
+    }
+
+    public double getTotalMedicineSales() throws SQLException {
+        String sql = "SELECT SUM(medicine_total) FROM invoice";
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getDouble(1);
+        }
+        return 0.0;
     }
 }

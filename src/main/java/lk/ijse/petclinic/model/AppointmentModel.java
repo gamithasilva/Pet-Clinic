@@ -1,12 +1,16 @@
 package lk.ijse.petclinic.model;
 
+import lk.ijse.petclinic.db.DBConnection;
 import lk.ijse.petclinic.dto.AppointmentDTO;
 import lk.ijse.petclinic.dto.AppointmentMedicineDTO;
 import lk.ijse.petclinic.dto.MedicalHistoryDTO;
 import lk.ijse.petclinic.dto.PaymentDTO;
 import lk.ijse.petclinic.util.Crudutil;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -389,6 +393,18 @@ public class AppointmentModel {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public int getTotalAppointmentsCount() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM appointment";
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+        return 0;
     }
 
 }

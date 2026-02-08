@@ -3,6 +3,7 @@ package lk.ijse.petclinic.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -33,12 +34,12 @@ public class LayoutController {
     @FXML
     private Button petBtn;
 
-    @FXML
-    private Button reportBtn;
+
 
     public void initialize(){
         try{
             loadDashBoard();
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -87,6 +88,10 @@ public class LayoutController {
         setActiveButton(medicineBtn);
     }
 
+
+
+
+
     private void setActiveButton(Button activeButton) {
         // Remove active class from all buttons
         dashboardBtn.getStyleClass().remove("nav-button-active");
@@ -94,7 +99,7 @@ public class LayoutController {
         doctorBtn.getStyleClass().remove("nav-button-active");
         appointmentBtn.getStyleClass().remove("nav-button-active");
         medicineBtn.getStyleClass().remove("nav-button-active");
-        reportBtn.getStyleClass().remove("nav-button-active");
+
 
         // Add active class to the clicked button
         if (!activeButton.getStyleClass().contains("nav-button-active")) {

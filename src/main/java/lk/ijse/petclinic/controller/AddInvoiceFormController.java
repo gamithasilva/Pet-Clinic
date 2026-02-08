@@ -12,6 +12,8 @@ import lk.ijse.petclinic.dto.PaymentDTO;
 import lk.ijse.petclinic.model.AppointmentModel;
 import lk.ijse.petclinic.model.InvoiceModel;
 import lk.ijse.petclinic.model.PaymentModel;
+import lk.ijse.petclinic.model.AppointmentMedicineModel;
+import lk.ijse.petclinic.util.Reference;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -34,6 +36,7 @@ public class AddInvoiceFormController {
     private AppointmentModel appointmentModel = new AppointmentModel();
     private PaymentModel paymentModel = new PaymentModel();
     private InvoiceModel invoiceModel = new InvoiceModel();
+    private AppointmentMedicineModel appointmentMedicineModel = new AppointmentMedicineModel();
     private AppointmentDTO selectedAppointment;
     private PaymentDTO selectedPayment;
 
@@ -115,7 +118,7 @@ public class AddInvoiceFormController {
 
     private void loadAppointmentDetails() {
         try {
-            // Load full appointment details with medicines
+            // Load full appointment details
             selectedAppointment = appointmentModel.getAppointmentById(selectedAppointment.getAppointmentId());
 
             // Load payment details
@@ -141,16 +144,16 @@ public class AddInvoiceFormController {
 
             // Calculate medicine total
             double medicineTotal = 0.0;
-            if (selectedAppointment.getMedicines() != null && !selectedAppointment.getMedicines().isEmpty()) {
-                for (AppointmentMedicineDTO medicine : selectedAppointment.getMedicines()) {
-                    // Ensure total is calculated
-                    if (medicine.getTotal() == null) {
-                        medicine.calculateTotal();
-                    }
-
-                    // Add to total only if not null
-                    if (medicine.getTotal() != null) {
-                        medicineTotal += medicine.getTotal();
+            List<AppointmentMedicineDTO> medicines = appointmentMedicineModel.getAppointmentMedicines(selectedAppointment.getAppointmentId());
+            if (medicines != null && !medicines.isEmpty()) {
+                selectedAppointment.setMedicines(medicines); // keep appointment in sync
+                for (AppointmentMedicineDTO med : medicines) {
+                    if (med.getSubtotal() != null) {
+                        medicineTotal += med.getSubtotal();
+                    } else if (med.getSellingPrice() != null && med.getQuantity() != null) {
+                        medicineTotal += med.getSellingPrice() * med.getQuantity();
+                    } else if (med.getUnitPrice() != null && med.getQuantity() != null) {
+                        medicineTotal += med.getUnitPrice() * med.getQuantity();
                     }
                 }
             }
@@ -223,9 +226,9 @@ public class AddInvoiceFormController {
             invoice.setPaymentId(selectedPayment.getPaymentId());
             invoice.setInvoiceNumber(invoiceNumberField.getText());
             invoice.setConsultationFee(consultationFee);
-            invoice.setMedicineTotal(medicineTotal);
+            invoice.setMedicineTotal(medicineTotal);  // Set medicine total
             invoice.setDiscount(discount);
-            invoice.calculateTotals();
+            invoice.calculateTotals();  // This will now include the medicine total
 
             // Save invoice
             boolean success = invoiceModel.createInvoice(invoice);
@@ -289,5 +292,6 @@ public class AddInvoiceFormController {
     private void closeWindow() {
         Stage stage = (Stage) cancelBtn.getScene().getWindow();
         stage.close();
+        Reference.petView.initialize();
     }
 }

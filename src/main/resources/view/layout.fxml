@@ -180,31 +180,7 @@
                   </VBox.margin>
                </Button>
 
-               <Button fx:id="reportBtn" alignment="CENTER_LEFT" prefHeight="48" prefWidth="220" styleClass="nav-button">
-                  <graphic>
-                     <HBox alignment="CENTER_LEFT" spacing="12.0">
-                        <children>
-                           <VBox alignment="CENTER" styleClass="icon-container">
-                              <children>
-                                 <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                                    <image>
-                                       <Image url="@../image/icons8-report-50.png" />
-                                    </image>
-                                 </ImageView>
-                              </children>
-                           </VBox>
-                           <Label style="-fx-text-fill: inherit; -fx-font-size: 14;" text="Report">
-                              <font>
-                                 <Font name="System Bold" size="14.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </HBox>
-                  </graphic>
-                  <VBox.margin>
-                     <Insets left="15.0" right="15.0" />
-                  </VBox.margin>
-               </Button>
+
 
                <!-- Separator -->
                <Separator style="-fx-background-color: #333333;">

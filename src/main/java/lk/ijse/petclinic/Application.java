@@ -16,6 +16,7 @@ public class Application extends javafx.application.Application {
 
         stage.setTitle("Hello!");
         stage.setScene(scene);
+        
         stage.setMaximized(true);
         stage.show();
     }
